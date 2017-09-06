@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>vue-runkit Example</title>
+		<meta charset="utf-8"></meta>
+		<script src="https://embed.runkit.com"></script>
+		<script src="https://unpkg.com/vue"></script>
+	</head>
+	<body>
+		<div id="app">
+			<runkit @onLoad="onLoad" @onEvaluate="onEvaluate" source="process.env.test" :env="['test=123']" node-version="8.3.0" ref="runkit"></runkit>
+		</div>
+		<script src="https://unpkg.com/vue-runkit/dist/vue-runkit.min.js"></script>
+		<script>
+			Vue.component('runkit',window.vuerunkit)
+			var app=new Vue({
+				el: '#app',
+				methods: {
+					onLoad: function(nt){
+						console.log('notebook loaded')
+						console.log(nt)
+					},
+					onEvaluate: function(){
+						//notebook instance can be access from this.$refs.runkit.notebook
+						this.$refs.runkit.notebook.getSource(function(src){
+							console.log(src)
+						})
+					}
+				}
+			})
+		</script>
+	</body>
+</html>
