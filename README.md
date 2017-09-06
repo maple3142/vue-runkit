@@ -15,7 +15,7 @@ var app=new Vue({
 	//.....
 })
 ```
-[example](https://unpkg.com/vue-runkit/example.html)
+[example](https://rawgit.com/maple3142/vue-runkit/master/example.html)
 
 with webpack
 ----------
