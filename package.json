@@ -1,6 +1,6 @@
 {
 	"name": "vue-runkit",
-	"version": "0.4.1",
+	"version": "0.5.0",
 	"main": "index.js",
 	"license": "MIT",
 	"devDependencies": {
@@ -18,8 +18,9 @@
 		"vue": "^2.4.2"
 	},
 	"scripts": {
-		"build": "webpack",
-		"prod": "cross-env NODE_ENV=production webpack"
+		"build": "cross-env NODE_ENV=development webpack",
+		"prod": "cross-env NODE_ENV=production webpack",
+		"all": "cross-env NODE_ENV=development webpack && cross-env NODE_ENV=production webpack"
 	},
 	"repository": {
 		"type": "git",

@@ -5,7 +5,7 @@ var prod = (process.env.NODE_ENV === 'production')
 module.exports = {
 	entry: path.join(__dirname, 'src', 'index.js'),
 	output: {
-		filename: prod?'vue-runkit.min.js':'vue-runkit.js',
+		filename: prod ? 'vue-runkit.min.js' : 'vue-runkit.js',
 		path: path.join(__dirname, 'dist')
 	},
 	module: {
@@ -22,7 +22,7 @@ module.exports = {
 		]
 	},
 	resolve: {
-		extensions: ['.js','.vue']
+		extensions: ['.js', '.vue']
 	},
 	devtool: 'source-map',
 	plugins: prod ? [
@@ -30,5 +30,5 @@ module.exports = {
 			compress: { warnings: false },
 			sourceMap: true
 		})
-	]:[]
+	] : []
 }
