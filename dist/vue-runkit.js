@@ -207,8 +207,9 @@ var _runkit2 = _interopRequireDefault(_runkit);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-if (typeof window !== 'undefined' && !('vuerunkit' in window)) window.vuerunkit = _runkit2.default;
 exports.default = _runkit2.default;
+
+if (window) window.vuerunkit = _runkit2.default;
 
 /***/ }),
 /* 3 */
@@ -330,3 +331,4 @@ if (false) {
 
 /***/ })
 /******/ ]);
+//# sourceMappingURL=vue-runkit.js.map

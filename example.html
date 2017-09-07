@@ -5,12 +5,12 @@
 		<meta charset="utf-8"></meta>
 		<script src="https://embed.runkit.com"></script>
 		<script src="https://unpkg.com/vue"></script>
+		<script src="https://unpkg.com/vue-runkit/dist/vue-runkit.min.js"></script>
 	</head>
 	<body>
 		<div id="app">
 			<runkit @onLoad="onLoad" @onEvaluate="onEvaluate" source="process.env.test" :env="['test=123']" node-version="8.3.0" ref="runkit"></runkit>
 		</div>
-		<script src="https://unpkg.com/vue-runkit/dist/vue-runkit.min.js"></script>
 		<script>
 			Vue.component('runkit',window.vuerunkit)
 			var app=new Vue({
