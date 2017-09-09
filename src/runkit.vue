@@ -3,9 +3,11 @@
 	</div>
 </template>
 <script>
-if (!('RunKit' in window))
-	throw new Error('RunKit script required! <script src="https://embed.runkit.com"><\/script>')
-const Runkit = window.RunKit
+if (!('RunKit' in window) && __DEV__)
+	console.warn('consider add <script src="https://embed.runkit.com"><\/script> in html\nthis message won\'t show in production build(min.js version)')
+
+import axios from 'axios'
+
 export default {
 	props: {
 		source: {
@@ -42,7 +44,7 @@ export default {
 			notebook: null
 		}
 	},
-	mounted() {
+	async mounted() {
 		let opt = {}
 		for (var k in this.$props) {
 			opt[k] = this.$props[k]
@@ -56,7 +58,18 @@ export default {
 			this.$emit('onEvaluate', this.notebook)
 		}
 
-		this.notebook = Runkit.createNotebook(opt)
+		if(!('RunKit' in window)){
+			let script=document.createElement('script')
+			script.src='https://embed.runkit.com/'
+			script.onload=()=>{
+				this.notebook = window.RunKit.createNotebook(opt)
+			}
+			document.head.appendChild(script)
+		}
+		else{
+			this.notebook = window.RunKit.createNotebook(opt)
+		}
+		
 	}
 }
 </script>

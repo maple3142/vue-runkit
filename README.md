@@ -2,9 +2,6 @@ vue-runkit
 ==========
 vue wrapper of [runkit embed](https://runkit.com/docs/embed)
 
-### please include `<script src="https://embed.runkit.com"></script>` to use. *(webpack and browser)*
-
-
 use in browser
 ----------
 ```html

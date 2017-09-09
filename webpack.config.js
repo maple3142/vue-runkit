@@ -2,6 +2,18 @@ var path = require('path')
 var webpack = require('webpack')
 var prod = (process.env.NODE_ENV === 'production')
 
+var plugins = [
+	new webpack.DefinePlugin({
+		'__DEV__': process.env.NODE_ENV === 'development'
+	})
+]
+if (prod) {
+	plugins.push(new webpack.optimize.UglifyJsPlugin({
+		compress: { warnings: false },
+		sourceMap: true
+	}))
+}	
+
 module.exports = {
 	entry: path.join(__dirname, 'src', 'index.js'),
 	output: {
@@ -27,10 +39,5 @@ module.exports = {
 		extensions: ['.js', '.vue']
 	},
 	devtool: 'source-map',
-	plugins: prod ? [
-		new webpack.optimize.UglifyJsPlugin({
-			compress: { warnings: false },
-			sourceMap: true
-		})
-	] : []
+	plugins: plugins
 }
