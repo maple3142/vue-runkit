@@ -1,4 +1,14 @@
-/******/ (function(modules) { // webpackBootstrap
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(typeof exports === 'object' && typeof module === 'object')
+		module.exports = factory();
+	else if(typeof define === 'function' && define.amd)
+		define([], factory);
+	else if(typeof exports === 'object')
+		exports["vuerunkit"] = factory();
+	else
+		root["vuerunkit"] = factory();
+})(this, function() {
+return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
 /******/
@@ -197,19 +207,7 @@ exports.default = {
 "use strict";
 
 
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-
-var _runkit = __webpack_require__(0);
-
-var _runkit2 = _interopRequireDefault(_runkit);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.default = _runkit2.default;
-
-if (window) window.vuerunkit = _runkit2.default;
+module.exports = __webpack_require__(0).default;
 
 /***/ }),
 /* 3 */
@@ -331,4 +329,5 @@ if (false) {
 
 /***/ })
 /******/ ]);
+});
 //# sourceMappingURL=vue-runkit.js.map
