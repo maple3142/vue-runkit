@@ -1,5 +1,7 @@
 vue-runkit
 ==========
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/maple3142/vue-runkit.svg)](https://greenkeeper.io/)
 vue wrapper of [runkit embed](https://runkit.com/docs/embed)
 
 use in browser
