@@ -31,7 +31,7 @@ export default {
 
 props
 ----------
-[apidoc](https://runkit.com/docs/embed#options)
+[Options in Runkit Embed docs](https://runkit.com/docs/embed#options)
 
 ```javascript
 props: {
@@ -54,13 +54,13 @@ props: {
 		type: String
 	},
 	minHeight: {
-		type: Number
+		type: String
 	},
 	packageTimestamp: {
 		type: Number
 	},
 	preamble: {
-		type: Boolean
+		type: String
 	}
 }
 ```
@@ -96,7 +96,7 @@ new Vue({
 
 notebook object
 ----------------
-[apidoc](https://runkit.com/docs/embed#api)
+[Runkit Embed API docs](https://runkit.com/docs/embed#api)
 
 1. can be access with `ref`
 ```html
