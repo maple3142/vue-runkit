@@ -2596,13 +2596,13 @@ exports.default = {
 			type: String
 		},
 		minHeight: {
-			type: Number
+			type: String
 		},
 		packageTimestamp: {
 			type: Number
 		},
 		preamble: {
-			type: Boolean
+			type: String
 		}
 	},
 	data: function data() {

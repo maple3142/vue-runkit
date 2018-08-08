@@ -2,17 +2,28 @@
 <html>
 	<head>
 		<title>vue-runkit Example</title>
+		<!-- This example should be served by a web server (Python 2: "python -m SimpleHTTPServer") -->
 		<meta charset="utf-8"></meta>
 		<!-- <script src="https://embed.runkit.com"></script>
 			if window.RunKit not appear
 			script will auto add it-->
 		<script src="https://unpkg.com/vue"></script>
 		<script src="https://unpkg.com/vue-runkit"></script>
+		<!-- <script src="dist/vue-runkit.js"></script> for local version -->
 		<!-- <script src="https://unpkg.com/vue-runkit/dist/vue-runkit.min.js"></script> for production version-->
 	</head>
 	<body>
 		<div id="app">
-			<runkit @onLoad="onLoad" @onEvaluate="onEvaluate" source="process.env.test" :env="['test=123']" node-version="8.3.0" ref="runkit"></runkit>
+			<runkit
+				@onLoad="onLoad"
+				@onEvaluate="onEvaluate"
+				source="`Env: ${process.env.test}, preambleVar: ${preambleVar}` // Run me"
+				:env="['test=123']"
+				node-version="8.3.0"
+				preamble="var preambleVar = 'It works'"
+				min-height="300px"
+				ref="runkit">
+			</runkit>
 		</div>
 		<script>
 			Vue.component('runkit',window.vuerunkit)
