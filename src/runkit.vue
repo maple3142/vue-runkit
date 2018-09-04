@@ -40,7 +40,6 @@ export default {
 	},
 	data() {
 		return {
-			options: Object.assign({}, this.option),
 			notebook: null
 		}
 	},
@@ -51,10 +50,10 @@ export default {
 		}
 		opt.element = this.$refs.runkit
 
-		this.options.onLoad = notebook => {
+		opt.onLoad = notebook => {
 			this.$emit('onLoad', this.notebook)
 		}
-		this.options.onEvaluate = () => {
+		opt.onEvaluate = () => {
 			this.$emit('onEvaluate', this.notebook)
 		}
 
