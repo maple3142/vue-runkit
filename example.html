@@ -8,15 +8,15 @@
 			if window.RunKit not appear
 			script will auto add it-->
 		<script src="https://unpkg.com/vue"></script>
-		<script src="https://unpkg.com/vue-runkit"></script>
-		<!-- <script src="dist/vue-runkit.js"></script> for local version -->
+		<!-- <script src="https://unpkg.com/vue-runkit"></script> -->
+		<script src="dist/vue-runkit.js"></script><!--  for local version -->
 		<!-- <script src="https://unpkg.com/vue-runkit/dist/vue-runkit.min.js"></script> for production version-->
 	</head>
 	<body>
 		<div id="app">
 			<runkit
-				@onLoad="onLoad"
-				@onEvaluate="onEvaluate"
+				@load="onLoad"
+				@evaluate="onEvaluate"
 				source="`Env: ${process.env.test}, preambleVar: ${preambleVar}` // Run me"
 				:env="['test=123']"
 				node-version="8.3.0"

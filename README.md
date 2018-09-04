@@ -4,28 +4,31 @@ vue wrapper of [runkit embed](https://runkit.com/docs/embed)
 
 use in browser
 ----------
+
 ```html
 <script src="https://unpkg.com/vue-runkit/dist/vue-runkit.min.js"></script>
 ```
+
 ```javascript
 Vue.component('runkit',window.vuerunkit)
 //then create you vue app...
 var app=new Vue({
-	//.....
+  //.....
 })
 ```
+
 [example](https://rawgit.com/maple3142/vue-runkit/master/example.html)
 
 with webpack
 ----------
-then
 
 ```npm install --save-dev vue-runkit``` or ```yarn add -D vue-runkit```
+
 ```javascript
 import runkit from 'vue-runkit'
 export default {
-	components: {runkit}
-	//else...
+  components: { runkit }
+  //else...
 }
 ```
 
@@ -35,33 +38,33 @@ props
 
 ```javascript
 props: {
-	source: {
-		type: String
-	},
-	readOnly: {
-		type: Boolean
-	},
-	mode: {
-		type: String
-	},
-	nodeVersion: {
-		type: String
-	},
-	env: {
-		type: Array
-	},
-	title: {
-		type: String
-	},
-	minHeight: {
-		type: String
-	},
-	packageTimestamp: {
-		type: Number
-	},
-	preamble: {
-		type: String
-	}
+  source: {
+    type: String
+  },
+  readOnly: {
+    type: Boolean
+  },
+  mode: {
+    type: String
+  },
+  nodeVersion: {
+    type: String
+  },
+  env: {
+    type: Array
+  },
+  title: {
+    type: String
+  },
+  minHeight: {
+    type: String
+  },
+  packageTimestamp: {
+    type: Number
+  },
+  preamble: {
+    type: String
+  }
 }
 ```
 
@@ -76,21 +79,22 @@ example: `readOnly` => `read-only`
 events
 -----------
 `onLoad` and `onEvaluate`
+
 ```html
-<runkit @onLoad="onLoad" @onEvaluate="onEvaluate"/>
+<runkit @load="onLoad" @evaluate="onEvaluate"/>
 ```
-<span id="eventjs"></span>
+
 ```javascript
 new Vue({
-	//skip...
-	methods: {
-		onLoad(notebook){
-			//doSomething...
-		},
-		onEvaluate(notebook){
-			//doSomething...
-		}
-	}
+  //skip...
+  methods: {
+    onLoad(notebook){
+      //doSomething...
+    },
+    onEvaluate(notebook){
+      //doSomething...
+    }
+  }
 })
 ```
 
@@ -99,19 +103,21 @@ notebook object
 [Runkit Embed API docs](https://runkit.com/docs/embed#api)
 
 1. can be access with `ref`
+
 ```html
 <runkit ref="runkit"/>
 ```
+
 ```javascript
 new Vue({
-	//skip....
-	mounted(){
-		let notebook=this.$refs.runkit.notebook
-		//doSomething...
-	}
+  //skip....
+  mounted(){
+    let notebook=this.$refs.runkit.notebook
+    //doSomething...
+  }
 })
 ```
 
 2. access from events
 
-	[see here](#eventjs)
+  [see here](#event)

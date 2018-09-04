@@ -51,10 +51,10 @@ export default {
 		opt.element = this.$refs.runkit
 
 		opt.onLoad = notebook => {
-			this.$emit('onLoad', this.notebook)
+			this.$emit('load', this.notebook)
 		}
 		opt.onEvaluate = () => {
-			this.$emit('onEvaluate', this.notebook)
+			this.$emit('evaluate', this.notebook)
 		}
 
 		if(!('RunKit' in window)){
