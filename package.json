@@ -1,31 +1,35 @@
 {
-	"name": "vue-runkit",
-	"version": "2.0.0",
-	"main": "dist/vue-runkit.js",
-	"license": "MIT",
-	"devDependencies": {
-		"babel-core": "^6.21.0",
-		"babel-loader": "^7.1.2",
-		"babel-plugin-transform-runtime": "^6.23.0",
-		"babel-preset-es2015": "^6.18.0",
-		"babel-preset-stage-3": "^6.24.1",
-		"cross-env": "^5.0.5",
-		"uglifyjs": "^2.4.11",
-		"vue-loader": "^13.0.4",
-		"vue-template-compiler": "^2.4.2",
-		"webpack": "^2.2.1"
-	},
-	"dependencies": {
-		"axios": "^0.16.2",
-		"vue": "^2.5.17"
-	},
-	"scripts": {
-		"build": "cross-env NODE_ENV=development webpack",
-		"prod": "cross-env NODE_ENV=production webpack",
-		"all": "cross-env NODE_ENV=development webpack && cross-env NODE_ENV=production webpack"
-	},
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/maple3142/vue-runkit.git"
-	}
+  "name": "vue-runkit",
+  "version": "2.0.0",
+  "main": "dist/vue-runkit.js",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.21.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-stage-3": "^6.24.1",
+    "cross-env": "^5.0.5",
+    "uglifyjs": "^2.4.11",
+    "vue-loader": "^13.0.4",
+    "vue-template-compiler": "^2.4.2",
+    "webpack": "^2.2.1"
+  },
+  "dependencies": {
+    "axios": "^0.16.2",
+    "vue": "^2.5.17",
+    "@snyk/protect": "latest"
+  },
+  "scripts": {
+    "build": "cross-env NODE_ENV=development webpack",
+    "prod": "cross-env NODE_ENV=production webpack",
+    "all": "cross-env NODE_ENV=development webpack && cross-env NODE_ENV=production webpack",
+    "prepare": "yarn run snyk-protect",
+    "snyk-protect": "snyk-protect"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/maple3142/vue-runkit.git"
+  },
+  "snyk": true
 }
