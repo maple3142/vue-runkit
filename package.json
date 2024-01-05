@@ -16,7 +16,7 @@
 		"webpack": "^2.2.1"
 	},
 	"dependencies": {
-		"axios": "^0.16.2",
+		"axios": "^1.6.4",
 		"vue": "^2.5.17"
 	},
 	"scripts": {
